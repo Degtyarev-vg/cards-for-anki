@@ -107,9 +107,6 @@ new Vue({
     }
   },
   methods: {
-    update: function(e) {
-      this.input = e.target.value;
-    },
     copyHtml: function() {
       let target = document.querySelector('.content').innerHTML;
       navigator.clipboard.writeText(target)

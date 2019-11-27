@@ -17,7 +17,11 @@
 		<a href="https://paulradzkov.com/2014/markdown_cheatsheet/" target="_blank" class="link-editor">Markdown</a>
 
 		<div class="stick">
-			<button class="button" @click="wrapElement('code')">&lt;code&gt;</button>
+			<button class="button" @click="wrapElement('code', 'tag')">&lt;code&gt;</button>
+			<button class="button" @click="wrapElement('', 'js')">js</button>
+			<button class="button" @click="wrapElement('**')">b</button>
+			<button class="button" @click="wrapElement('*')">i</button>
+			<button class="button" @click="wrapElement('~~')">lt</button>
 			<button class="button button--right" @click.prevent="copyHtml">Copy html</button>
 		</div>
 

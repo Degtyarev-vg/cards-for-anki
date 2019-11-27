@@ -123,7 +123,7 @@ new Vue({
           console.log('Something went wrong', err);
         })
     },
-    wrapElement(elem) {
+    wrapElement(elem, type) {
       let textComponent = document.querySelector('.editor-textarea');
       let selectedText;
 
@@ -133,7 +133,13 @@ new Vue({
         selectedText = textComponent.value.substring(startPos, endPos);
         if (selectedText) {
           let v = textComponent.value.substring(0, startPos);
-          v += `<${elem}>` + selectedText + `</${elem}>`;
+          if (type == 'tag') {
+            v += `<${elem}>${selectedText}</${elem}>`;
+          } else if (type == 'js') {
+            v += `\`\`\`javascript\n${selectedText}\n\`\`\``;
+          } else {
+            v += `${elem}${selectedText}${elem}`;
+          }
           v += textComponent.value.substring(endPos);
 
           textComponent.value = v;

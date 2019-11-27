@@ -246,8 +246,12 @@ blockquote:before {
 	font-size: 12px;
 	line-height: 1;
 	color: #fff;
-	padding: 5px;
-	margin: 0 5px;
+	padding: 5px 10px;
+	margin: 0 2px;
+	transition: all ease 0.5s;
+}
+.button:hover {
+	background-color: #4665d7;
 }
 .button--right {
 	float: right;

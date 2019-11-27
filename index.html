@@ -15,10 +15,15 @@
 	<div id="editor">
 		<div class="hint" v-show="hint">HTML скопирован в буфер</div>
 		<a href="https://paulradzkov.com/2014/markdown_cheatsheet/" target="_blank" class="link-editor">Markdown</a>
+
+		<div class="stick">
+			<button class="button" @click="wrapElement('code')">&lt;code&gt;</button>
+			<button class="button button--right" @click.prevent="copyHtml">Copy html</button>
+		</div>
+
 		<div class="container">
 			<textarea :value="input" @input="update" class="editor-textarea"></textarea>
 			<div v-html="compiledMarkdown" class="content"></div>
-			<button class="copy" @click.prevent="copyHtml">Copy html</button>
 		</div>
 	</div>
 

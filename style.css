@@ -180,12 +180,27 @@ blockquote:before {
 
 /* STYLES FOR EDITOR*/
 #editor {
-	padding: 20px;
+	padding: 40px 20px 20px;
 	position: relative;
 }
+
 .link-editor {
 	display: inline-block;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
+	text-decoration: none;
+	color: #1C257B;
+}
+
+.stick {
+	background-color: #fff;
+	border-bottom: 1px solid #151515;
+	font-size: 0;
+	padding: 5px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
 }
 
 .container {
@@ -210,20 +225,6 @@ blockquote:before {
 	width: 50%;
 }
 
-.copy {
-	background-color: #1C257B;
-	border-radius: 3px;
-	padding: 5px;
-	display: inline-block;
-	font-size: 10px;
-	line-height: 1;
-	color: #fff;
-	text-transform: uppercase;
-	position: absolute;
-	top: 0;
-	right: 0;
-}
-
 .hint {
 	display: inline-block;
 	background-color: green;
@@ -235,5 +236,20 @@ blockquote:before {
 	position: absolute;
 	top: 0;
 	right: 0;
+	z-index: 2;
+}
+
+.button {
+	background-color: #1C257B;
+	display: inline-block;
+	border-radius: 3px;
+	font-size: 12px;
+	line-height: 1;
+	color: #fff;
+	padding: 5px;
+	margin: 0 5px;
+}
+.button--right {
+	float: right;
 }
 /* STYLES FOR EDITOR*/

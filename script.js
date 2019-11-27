@@ -122,6 +122,23 @@ new Vue({
         .catch(err => {
           console.log('Something went wrong', err);
         })
+    },
+    wrapElement(elem) {
+      let textComponent = document.querySelector('.editor-textarea');
+      let selectedText;
+
+      if (textComponent.selectionStart !== undefined) {
+        let startPos = textComponent.selectionStart;
+        let endPos = textComponent.selectionEnd;
+        selectedText = textComponent.value.substring(startPos, endPos);
+        if (selectedText) {
+          let v = textComponent.value.substring(0, startPos);
+          v += `<${elem}>` + selectedText + `</${elem}>`;
+          v += textComponent.value.substring(endPos);
+
+          textComponent.value = v;
+        }
+      }
     }
   },
   updated: function() {
